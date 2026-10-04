@@ -516,7 +516,14 @@ const prospects = [
 
 
 // ─── State ───
-let emailedIds = JSON.parse(localStorage.getItem('autoflow_emailed') || '[]');
+let emailedIds = [];
+try {
+    emailedIds = JSON.parse(localStorage.getItem('autoflow_emailed') || '[]');
+    if (!Array.isArray(emailedIds)) emailedIds = [];
+} catch (e) {
+    // Corrupt stored data: start fresh instead of crashing the app
+    emailedIds = [];
+}
 
 
 // ─── Default Email Template ───

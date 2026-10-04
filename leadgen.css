@@ -710,6 +710,7 @@ a {
     z-index: 1000;
     transform: translateY(100px);
     opacity: 0;
+    pointer-events: none;
     transition: all 0.4s var(--ease-out);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -717,6 +718,7 @@ a {
 .toast.show {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
 }
 
 .toast .toast-icon {
