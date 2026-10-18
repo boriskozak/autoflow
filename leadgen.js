@@ -706,7 +706,11 @@ function sendEmail(id) {
     // Track emailed status
     if (!emailedIds.includes(id)) {
         emailedIds.push(id);
-        localStorage.setItem('autoflow_emailed', JSON.stringify(emailedIds));
+        try {
+            localStorage.setItem('autoflow_emailed', JSON.stringify(emailedIds));
+        } catch (e) {
+            // Storage unavailable (private mode / quota): keep in-memory state
+        }
     }
 
     // Update UI
