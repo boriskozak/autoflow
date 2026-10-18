@@ -647,7 +647,7 @@ function renderProspects(list) {
           </div>
           ${p.website ? `<div class="detail-item">
             <span class="detail-label">🌐 Website</span>
-            <span class="detail-value"><a href="https://${p.website}" target="_blank" style="color: var(--neon-cyan);">${p.website}</a></span>
+            <span class="detail-value"><a href="https://${p.website}" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan);">${p.website}</a></span>
           </div>` : ''}
           ${p.phone ? `<div class="detail-item">
             <span class="detail-label">📞 Phone</span>
