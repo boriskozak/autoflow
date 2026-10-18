@@ -756,10 +756,12 @@ function animateCounter(elementId, target) {
 
 
 // ─── Toast Notification ───
+let toastTimer;
 function showToast(companyName) {
     const toast = document.getElementById('toast');
     const toastText = document.getElementById('toastText');
     toastText.innerHTML = `Email composed for <strong>${companyName}</strong>`;
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
 }
