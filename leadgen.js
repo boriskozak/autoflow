@@ -566,11 +566,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('statusFilter').addEventListener('change', applyFilters);
 
     // Template toggle
-    document.getElementById('templateToggle').addEventListener('click', () => {
+    const templateToggle = document.getElementById('templateToggle');
+    const toggleTemplate = () => {
         const body = document.getElementById('templateContent');
         const icon = document.getElementById('toggleIcon');
-        body.classList.toggle('open');
-        icon.classList.toggle('open');
+        const isOpen = body.classList.toggle('open');
+        icon.classList.toggle('open', isOpen);
+        templateToggle.setAttribute('aria-expanded', String(isOpen));
+    };
+    templateToggle.addEventListener('click', toggleTemplate);
+    templateToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleTemplate();
+        }
     });
 });
 

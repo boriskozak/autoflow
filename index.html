@@ -64,9 +64,10 @@
 
         <!-- Email Template (Collapsible) -->
         <div class="template-section">
-            <div class="template-header" id="templateToggle">
+            <div class="template-header" id="templateToggle" role="button" tabindex="0"
+                aria-expanded="false" aria-controls="templateContent">
                 <h3>✉️ Email Template — <span style="color: var(--neon-cyan);">Click to customize</span></h3>
-                <span class="toggle-icon" id="toggleIcon">▼</span>
+                <span class="toggle-icon" id="toggleIcon" aria-hidden="true">▼</span>
             </div>
             <div class="template-body" id="templateContent">
                 <label for="templateSubject">Subject Line</label>
